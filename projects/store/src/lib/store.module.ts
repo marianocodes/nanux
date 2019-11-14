@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { StoreComponent } from './store.component';
-
-
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { StoreConfig } from './models/config.model';
+import { CONFIG_TOKEN } from './utils/tokens';
 
 @NgModule({
-  declarations: [StoreComponent],
-  imports: [
-  ],
-  exports: [StoreComponent]
+  imports: []
 })
-export class StoreModule { }
+export class NanuxStore {
+  public static forRoot(config?: StoreConfig): ModuleWithProviders<NanuxStore> {
+    return {
+      ngModule: NanuxStore,
+      providers: [{ provide: CONFIG_TOKEN, useValue: config }]
+    }
+  }
+}

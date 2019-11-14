@@ -1,6 +1,11 @@
 {
   "name": "nanux",
-  "version": "0.0.0",
+  "description": "An experimental library to do Redux in a Angular Project with Ivy using High order components",
+  "author": {
+    "email": "malvarezhcr@gmail.com",
+    "name": "Mariano Alvarez"
+  },
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

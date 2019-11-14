@@ -19,10 +19,10 @@
       "dom"
     ],
     "paths": {
-      "store": [
+      "@nanux/store": [
         "dist/store"
       ],
-      "store/*": [
+      "@nanux/store/*": [
         "dist/store/*"
       ]
     }
