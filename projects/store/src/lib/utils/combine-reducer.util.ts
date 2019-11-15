@@ -1,7 +1,7 @@
 export function combineReducers(reducers) {
   const reducerKeys = Object.keys(reducers);
 
-  return (state = {}, action) => {
+  return (state = {}, action?) => {
     const nextState = {};
 
     for (let i = 0; i < reducerKeys.length; i++) {
