@@ -22,22 +22,24 @@ TBD
 
 ### @nanux/store
 **Alpha**
-- [ ] Basic service to handle store  
-- [ ] Ivy support by using Experimental HOCs
+- [x] Basic service to handle store  
+- [x] Ivy support by using Experimental HOCs
+- [x] Auto-generation of selectors
+- [x] Redux DevTools support
 - [ ] First release to NPM registry
 - [ ] Basic documentation
 - [ ] Evergreen Browser support
+- [ ] 80% Unit testing coverage
+- [ ] Improve action typing
 
 **Beta**
 - [ ] Memoization of data 
 - [ ] Implementation of pattern to handle sideffects
 - [ ] Create or separate classes in charge of the busineess logic into a different lib to 
-- [ ] Redux DevTools support
 
 **V1**
 - [ ] CI/CD support to run unit tests and E2E
 - [ ] Persistent data - Rehydrid data from storage or HTTP service  
-- [ ] Selectors - will they be needed?
 
 **V1-Next**
 - [ ] Better type support 
@@ -46,3 +48,7 @@ TBD
 - [ ] Schematics to implement the library faster
 - [ ] Custom pipes to resolve state in the HTML
 
+### Rules
+1. Add properties to class with the same declared in the state and adding `$`
+2. If select more than one state, make sure not to repeat propery name otherwise it will overwritten
+3. No optional properties allow in the first level of the state, all properties must be declare and have a default value

@@ -1,9 +1,8 @@
 {
   "name": "store",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "peerDependencies": {
     "@angular/common": "^9.0.0-rc.2",
-    "@angular/core": "^9.0.0-rc.2",
-    "tslib": "^1.10.0"
+    "@angular/core": "^9.0.0-rc.2"
   }
 }
