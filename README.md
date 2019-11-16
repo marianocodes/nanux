@@ -1,4 +1,5 @@
 # 💎 Nanux
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 An experimental library to do Redux in Angular with the new Ivy Engine.
 
 **🔥 Why you should use @nanux/store?**
@@ -155,3 +156,19 @@ Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](
 4. **Why would I use the reducer decorator?**
     Less code and works faster. Each action will map to the reducer specify. A difference to the switch syntax the decorator flow does not need to evaluate all the cases.
 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/mahcr"><img src="https://avatars2.githubusercontent.com/u/16544451?v=4" width="100px;" alt="Mariano Alvarez"/><br /><sub><b>Mariano Alvarez</b></sub></a><br /><a href="#ideas-mahcr" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/mahcr/nanux/commits?author=mahcr" title="Code">💻</a> <a href="#maintenance-mahcr" title="Maintenance">🚧</a> <a href="https://github.com/mahcr/nanux/commits?author=mahcr" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
