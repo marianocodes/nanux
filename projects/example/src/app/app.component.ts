@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from  './app.service'
 
 @Component({
   selector: 'nanux-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'example';
+
+  constructor(public service: AppService) { }
+
 }

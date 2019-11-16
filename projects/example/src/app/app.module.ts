@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NanuxStore } from '@nanux/store';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+// import { reducer } from './reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    NanuxStore.forRoot({
+      // reducerMap: {counter: reducer},
+      debugMode: true,
+      decorators: true
+    })
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
