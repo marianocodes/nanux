@@ -1,5 +1,6 @@
 # 💎 Nanux
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+
 An experimental library to do Redux in Angular with the new Ivy Engine.
 
 **🔥 Why you should use @nanux/store?**
