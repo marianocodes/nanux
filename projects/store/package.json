@@ -1,6 +1,11 @@
 {
-  "name": "store",
-  "version": "0.0.3",
+  "name": "@nanux/store",
+  "description": "An experimental library to do Redux in Angular with the new Ivy Engine and higher-order components.",
+  "author": {
+    "email": "malvarezhcr@gmail.com",
+    "name": "Mariano Alvarez"
+  },
+  "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^9.0.0-rc.2",
     "@angular/core": "^9.0.0-rc.2"

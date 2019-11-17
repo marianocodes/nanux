@@ -1,14 +1,14 @@
 import { async, TestBed } from '@angular/core/testing';
-import { StoreModule } from './store.module';
+import { NanuxStore } from './nanux-store.module';
 
 describe('StoreModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule]
+      imports: [NanuxStore]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(StoreModule).toBeDefined();
+    expect(NanuxStore).toBeDefined();
   });
 });

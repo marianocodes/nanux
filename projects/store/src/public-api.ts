@@ -1,5 +1,5 @@
 export * from './lib/store.service';
-export * from './lib/store.module';
+export * from './lib/nanux-store.module';
 export * from './lib/get-store.decorator';
 export * from './lib/reducer.decorator';
 export * from './lib/utils/combine-reducer.util';

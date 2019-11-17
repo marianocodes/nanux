@@ -17,3 +17,4 @@ Please note we have a code of conduct, please follow it in all your interactions
 6. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
    do not have permission to do that, you may request the second reviewer to merge it for you.
 7. Commit messages must be clear and follow the [Semantic commit](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) format
+8. Add your self in the contributor list by commenting in PR the following line: `@all-contributors please add <username> for <contributions>`, use as reference the [emoji table](https://allcontributors.org/docs/en/emoji-key) to know what contribution types use. More info [here](https://allcontributors.org/docs/en/bot/usage)
