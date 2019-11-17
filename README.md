@@ -120,7 +120,7 @@ Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](
 ### @nanux/store
 **Alpha**
 - [x] Basic service to handle store  
-- [x] Ivy support
+- [x] Ivy support / NG9
 - [x] Higher-Order Components to create a store
 - [x] Auto-generation of selectors
 - [x] Basic Redux DevTools support

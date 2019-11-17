@@ -5,16 +5,18 @@
     "email": "malvarezhcr@gmail.com",
     "name": "Mariano Alvarez"
   },
-  "version": "0.0.2",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:lib": "npm run build -- store",
+    "publish:lib": "npm run rimraf -- ./dist/store && npm run build:lib && npm publish ./dist/store --access public",
+    "rimraf": "rimraf"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.0.0-rc.2",
     "@angular/common": "~9.0.0-rc.2",
@@ -34,9 +36,9 @@
     "@angular/cli": "~9.0.0-rc.2",
     "@angular/compiler-cli": "~9.0.0-rc.2",
     "@angular/language-service": "~9.0.0-rc.2",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -47,6 +49,7 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "ng-packagr": "^9.0.0-rc.1",
     "protractor": "~5.4.2",
+    "rimraf": "^3.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.6.4"
