@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppService } from  './app.service'
+import { AppState } from  './state.service'
 
 @Component({
   selector: 'nanux-root',
@@ -8,6 +8,8 @@ import { AppService } from  './app.service'
 })
 export class AppComponent {
 
-  constructor(public service: AppService) { }
+  constructor(public state: AppState) {
+    this.state.getMyFavoriteEmojis();
+  }
 
 }

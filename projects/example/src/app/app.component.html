@@ -1,7 +1,12 @@
 <header class="flex">
-  <h1>Nanux! {{ service.counter$ | async }}</h1>
+  <h1>Nanux! {{ state.counter$ | async }}</h1>
 </header>
 <main>
-  <button (click)="service.dispatch()">counter</button>
+  <button (click)="state.increaseCounter()">counter</button>
+
+  <h2>My Favorite Emojis</h2>
+  <ul>
+    <li *ngFor="let emoji of state.emojis$ | async"> {{ emoji }}</li>
+  </ul>
 </main>
 
