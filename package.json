@@ -5,7 +5,11 @@
     "email": "malvarezhcr@gmail.com",
     "name": "Mariano Alvarez"
   },
-  "version": "0.0.5",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahcr/nanux.git"
+  },
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

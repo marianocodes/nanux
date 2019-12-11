@@ -1,4 +1,4 @@
-# 💎 @Nanux/store
+# @nanux/store 💎 
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 An experimental library to do Redux in Angular with the new Ivy Engine and higher-order components.
@@ -9,14 +9,14 @@ An experimental library to do Redux in Angular with the new Ivy Engine and highe
 - 🐛 Redux Dev Tools support
 - 👷 Encourage functional and reactive programming
 
-## 💥 Motivation 
+## Motivation 
 There are great solutions including vanilla Redux implementations but most of them end in a very verbose code. 
 
-## ⚙ How to implement @nanux/store in my project?
+## How to implement @nanux/store in my project?
 
 There are two ways to use it:
 
-### 🎖️ Decorator Reducer
+### Decorator Reducer 🎖️
 **1. Import `NanuxStore` in the `app.module.ts`**
 
 ```
@@ -47,7 +47,7 @@ export enum TODOs {
   providedIn: 'root',
 })
 @GetStore('counter', { counter: 0 })
-export class AppState {
+export class StateService {
 
   counter$: Observable<number>;
 
@@ -78,7 +78,7 @@ To know more about this issue go [here](https://github.com/microsoft/TypeScript/
 
 **Not feeling that adventurous to go with the reducer decorator? no problem**
 
-### 👴🏻 Tradicional reducer
+### Tradicional reducer 👴🏻
 This library also supports the traditional switch style to declare reducers.
 
 **1. Create a new file for the reducer and remove the initial state from the `GetStore` decorator**
@@ -111,10 +111,47 @@ export const reducer = (state = initialState, action: Action): State => {
 
 That's it! ❤️ 
 
-## 💼 How to Contribute?
+## Wondering how to trigger side effects?
+@nanux/store relies on the observable data service and facade patterns, these are simple, keep the componets clean with no heavy logic and removes the need of having an extra package. 
+
+Let's update our `state.service` file. For the propuse of this example, assume that we have a service that returns your favorite emojis. 
+
+1. Add a new property in the state
+```
+ { counter: 0, emojis: [] }
+```
+
+2. Create a function to run the request along with the actions that we want to trigger
+```
+  public getMyFavoriteEmojis() {    
+    this.store.dispatch(new Action(TODOs.GET_EMOJIS));
+
+    const request$ = this.api.getBestEmojis().pipe(
+      tap((data) => this.store.dispatch(new Action(TODOs.GET_EMOJIS_SUCCESS, data))),
+      catchError(() => {
+        this.store.dispatch(new Action(TODOs.GET_EMOJIS_FAIL));
+        return empty();
+      }));
+
+    return request$.subscribe();
+  }
+```
+
+3. Call the new function in the component
+```
+constructor(public state: AppState) {
+  this.state.getMyFavoriteEmojis();
+}
+```
+
+Do you find weird subscribing to an observable in a service? At first you might feel dirty but if you re-think it, it's the same subscription we would do in a component, if you want to cancel the observable, you can do it whenever you want, unsubscription is returned always. 
+
+Note: Keep in mind that http request would complete itself automatically once the request is solve
+
+## How to Contribute?
 Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](./CONTRIBUTING.md)
 
-## 🌎 Roadmap
+## Roadmap
 > This document pretends to show what work is in progress and future plans to improve the library. Feel free to create an issue and explain what features would like to have
 
 ### @nanux/store
@@ -126,7 +163,7 @@ Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](
 - [x] Basic Redux DevTools support
 - [X] Basic documentation
 - [X] Evergreen Browser support
-- [ ] First release to NPM registry
+- [X] First release to NPM registry
 - [ ] 80% Unit testing coverage
 - [ ] Improve action typing
 

@@ -5,6 +5,10 @@
     "email": "malvarezhcr@gmail.com",
     "name": "Mariano Alvarez"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahcr/nanux.git"
+  },
   "keywords": [
     "angular",
     "redux",
@@ -14,9 +18,9 @@
     "store"
   ],
   "license": "MIT",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "peerDependencies": {
-    "@angular/common": "^9.0.0-rc.2",
-    "@angular/core": "^9.0.0-rc.2"
+    "@angular/common": "^9.0.0-rc.3",
+    "@angular/core": "^9.0.0-rc.3"
   }
 }
