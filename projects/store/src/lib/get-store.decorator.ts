@@ -42,7 +42,7 @@ const initDecoratorReducer = (store: Store, stateSelected: string, cmp) => {
 export function GetStore(stateSelected: string, initialStateDecorator?) {
   return (cmpType) => {
     const originalFactory = cmpType.ɵfac;
-    cmpType.ɵfac = (...args) => {
+    cmpType.ɵprov.factory = (...args) => {
       const cmp = originalFactory(...args);
       const store: Store = ɵɵdirectiveInject(Store);
 

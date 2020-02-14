@@ -76,7 +76,7 @@ To know more about this issue go [here](https://github.com/microsoft/TypeScript/
 
 **5. Consume the selector in your component by `<h1>Nanux! {{ appState.counter$ | async }}</h1>`**
 
-**Not feeling that adventurous to go with the reducer decorator? no problem**
+Not feeling that adventurous to go with the reducer decorator? no problem
 
 ### Tradicional reducer 👴🏻
 This library also supports the traditional switch style to declare reducers.
@@ -165,12 +165,12 @@ Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](
 - [X] Basic documentation
 - [X] Evergreen Browser support
 - [X] First release to NPM registry
-- [ ] 80% Unit testing coverage
-- [ ] Improve action typing
+- [X] Implementation of pattern to handle sideffects
 
 **Beta**
+- [ ] 80% Unit testing coverage
+- [ ] Improve action typing
 - [ ] Memoization of data 
-- [ ] Implementation of pattern to handle sideffects
 - [ ] Create or separate classes in charge of the busineess logic into a different lib to 
 - [ ] Schematics to implement the library faster
 

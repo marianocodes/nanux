@@ -18,9 +18,9 @@
     "store"
   ],
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "peerDependencies": {
-    "@angular/common": "^9.0.0-rc.3",
-    "@angular/core": "^9.0.0-rc.3"
+    "@angular/common": "^9.0.1",
+    "@angular/core": "^9.0.1"
   }
 }

@@ -76,7 +76,7 @@ To know more about this issue go [here](https://github.com/microsoft/TypeScript/
 
 **5. Consume the selector in your component by `<h1>Nanux! {{ appState.counter$ | async }}</h1>`**
 
-**Not feeling that adventurous to go with the reducer decorator? no problem**
+Not feeling that adventurous to go with the reducer decorator? no problem
 
 ### Tradicional reducer 👴🏻
 This library also supports the traditional switch style to declare reducers.
@@ -144,9 +144,10 @@ constructor(public state: AppState) {
 }
 ```
 
-Do you find weird subscribing to an observable in a service? At first you might feel dirty but if you re-think it, it's the same subscription we would do in a component, if you want to cancel the observable, you can do it whenever you want, unsubscription is returned always. 
+Do you find weird subscribing to an observable in a service? At first you might feel dirty but if you re-think it, it's the same subscription we would do in a component.
+In case that you want to cancel the observable, you can do it whenever you want, unsubscription is always returned. 
 
-Note: Keep in mind that http request would complete itself automatically once the request is solve
+Note: Keep in mind that http request would complete itself automatically once the request is solved but if you plan to implement a custom observable use the `take` operator to make sure it completes after one call.
 
 ## How to Contribute?
 Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](./CONTRIBUTING.md)
@@ -164,12 +165,12 @@ Visit the [code of conduct](./CODE_OF_CONDUCT.md) and contribution [guidelines](
 - [X] Basic documentation
 - [X] Evergreen Browser support
 - [X] First release to NPM registry
-- [ ] 80% Unit testing coverage
-- [ ] Improve action typing
+- [X] Implementation of pattern to handle sideffects
 
 **Beta**
+- [ ] 80% Unit testing coverage
+- [ ] Improve action typing
 - [ ] Memoization of data 
-- [ ] Implementation of pattern to handle sideffects
 - [ ] Create or separate classes in charge of the busineess logic into a different lib to 
 - [ ] Schematics to implement the library faster
 
