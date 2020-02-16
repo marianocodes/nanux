@@ -14,12 +14,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lib": "npm run build -- store",
     "publish:lib": "npm run rimraf -- ./dist/store && npm run build:lib && npm publish ./dist/store --access public",
-    "rimraf": "rimraf"
+    "rimraf": "rimraf",
+    "test": "ng test",
+    "test:store:ci": "npm run test -- store --karma-config=projects/store/karma-ci.conf.js --no-progress --browsers=ChromeHeadlessCI"
   },
   "dependencies": {
     "@angular/animations": "~9.0.1",
