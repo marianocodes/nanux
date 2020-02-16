@@ -6,10 +6,7 @@ import { NanuxStore } from './nanux-store.module';
 describe('StoreService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [
-      NanuxStore.forRoot({
-        debugMode: true,
-        decorators: true
-      })
+
     ]
   }));
 
