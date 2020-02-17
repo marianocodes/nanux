@@ -78,7 +78,7 @@ To know more about this issue go [here](https://github.com/microsoft/TypeScript/
 
 Not feeling that adventurous to go with the reducer decorator? no problem
 
-### Tradicional reducer 👴🏻
+### Traditional reducer 👴🏻
 This library also supports the traditional switch style to declare reducers.
 
 **1. Create a new file for the reducer and remove the initial state from the `GetStore` decorator**
