@@ -1,4 +1,5 @@
 # @nanux/store 💎 
+![](https://github.com/mahcr/nanux/workflows/test/badge.svg?branch=master)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 An experimental library to do Redux in Angular with the new Ivy Engine and higher-order components.
