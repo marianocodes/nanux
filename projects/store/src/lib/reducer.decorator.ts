@@ -1,7 +1,9 @@
 export function Reducer(action) {
   return (target, name, descriptor?) => {
     const reducerAction = target.reducerAction;
-    if (!reducerAction) target.reducerAction = { };
+    if (!reducerAction) {
+      target.reducerAction = { };
+    }
     // is decorartor used in a method?
     if (descriptor) {
       target.reducerAction[action] = { func: target[name] };
@@ -10,11 +12,11 @@ export function Reducer(action) {
 
     let value;
 
-    const getter = function() {
+    const getter = () => {
       return value;
     };
 
-    const setter = function(newVal) {
+    const setter = (newVal) => {
       target.reducerAction[action] = { func: newVal};
       value = newVal;
     };
@@ -24,6 +26,6 @@ export function Reducer(action) {
       set: setter,
       enumerable: true,
       configurable: true
-    }
-  }
+    };
+  };
 }

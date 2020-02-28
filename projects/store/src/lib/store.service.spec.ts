@@ -14,7 +14,7 @@ describe('StoreService', () => {
   }));
 
   it('should be created', () => {
-    const service: Store = TestBed.get(Store);
+    const service: Store = TestBed.inject(Store);
     expect(service).toBeTruthy();
   });
 });

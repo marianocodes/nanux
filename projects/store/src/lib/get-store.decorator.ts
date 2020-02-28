@@ -7,7 +7,7 @@ import { select } from './utils/selector.util';
 /**
  * This function create and inject the selectors corresponding to the state.
  * Be aware that this a mutant function
- * @param {store} store - Root store instance
+ * @param store - Root store instance
  * @param stateSelected - Name of state created
  * @param cmp - Symbol where the `GetDecorator` is  being used
  */
@@ -24,12 +24,12 @@ const generateSelectors = (store, stateSelected, cmp) => {
       )
     );
   });
-}
+};
 
 const initDecoratorState = (store: Store, stateSelected: string, initialState) => {
   store.initialState = { ...store.initialState, [stateSelected]: initialState };
   store.init(); // subscrube to dispatch and init redux store
-}
+};
 
 const initDecoratorReducer = (store: Store, stateSelected: string, cmp) => {
   const reducerMap = store.reducerMap;
@@ -37,7 +37,7 @@ const initDecoratorReducer = (store: Store, stateSelected: string, cmp) => {
     Object.keys(cmp.reducerAction).map((key) => cmp.reducerAction[key].state = stateSelected);
     store.reducerMap = { ...reducerMap, ...cmp.reducerAction };
   }
-}
+};
 
 export function GetStore(stateSelected: string, initialStateDecorator?) {
   return (cmpType) => {
@@ -48,7 +48,7 @@ export function GetStore(stateSelected: string, initialStateDecorator?) {
 
       if (store.config.decorators) {
         initDecoratorState(store, stateSelected, initialStateDecorator);
-        initDecoratorReducer(store, stateSelected, cmp)
+        initDecoratorReducer(store, stateSelected, cmp);
       }
 
       generateSelectors(store, stateSelected, cmp);

@@ -15,10 +15,10 @@ export class AppState {
   public emojis$: Observable<string[]>;
 
   @Reducer(TODOs.GET_DATA)
-  public increment = (state, { payload }): State => ({ ...state, counter: state.counter + payload });
+  public increment = (state, { payload }): State => ({ ...state, counter: state.counter + payload })
 
   @Reducer(TODOs.GET_EMOJIS_SUCCESS)
-  public emojisSuccess = (state, { payload }): State => ({ ...state, emojis: payload });
+  public emojisSuccess = (state, { payload }): State => ({ ...state, emojis: payload })
 
   constructor(
     public store: Store,

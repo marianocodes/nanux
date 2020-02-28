@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppState } from  './state.service'
+import { AppState } from './state.service';
 
 @Component({
   selector: 'nanux-root',

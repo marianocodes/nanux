@@ -10,6 +10,6 @@ export class NanuxStore {
     return {
       ngModule: NanuxStore,
       providers: [{ provide: CONFIG_TOKEN, useValue: config }]
-    }
+    };
   }
 }
