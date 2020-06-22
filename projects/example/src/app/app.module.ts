@@ -5,7 +5,7 @@ import { NanuxStore } from '@nanux/store';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-// import { reducer } from './reducer';
+import { reducer } from './reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +14,9 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     NanuxStore.forRoot({
-      // reducerMap: {counter: reducer},
+      reducerMap: {counter: reducer},
       debugMode: true,
-      decorators: true
+      // decorators: true
     })
   ],
   providers: [

@@ -5,8 +5,9 @@ import { Action } from './models/actions.model';
 import { combineReducers } from './utils/combine-reducer.util';
 import { StoreConfig } from './models/config.model';
 import { CONFIG_TOKEN } from './utils/tokens';
+import { ReducerMap } from './reducer.decorator';
 
-const initAction = { type: '@@ INIT' };
+export const initAction = { type: '@@ INIT' };
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +16,8 @@ export class Store<T = any> {
   private db: BehaviorSubject<T | {}>;
   private dispatcher: BehaviorSubject<Action>;
   private tools;
-  public reducerMap;
 
+  public reducerMap: ReducerMap;
   public state: Observable<T | {}>;
   public actions: Observable<Action>;
   public initialState: Record<string, any>;
@@ -27,10 +28,9 @@ export class Store<T = any> {
     this.state = this.db.asObservable();
     this.actions = this.dispatcher.asObservable();
 
-    if (!this.config.decorators ) {
+    if (!this.config.decorators) {
       this.init();
     }
-
   }
 
   public init() {
@@ -39,12 +39,15 @@ export class Store<T = any> {
       (this.tools = win.__REDUX_DEVTOOLS_EXTENSION__.connect());
     }
     const rootReducer = this.config.decorators ? this.reducerForDecorators(this.config) : this.reducerForCases(this.config);
+
     this.dispatcher
       .pipe(
         scan(rootReducer, this.initialState || {}),
         shareReplay(1),
       )
-      .subscribe(data => this.db.next(data));
+      .subscribe(data => {
+        this.db.next(data);
+      });
   }
 
   public dispatch(action: Action) {
@@ -67,6 +70,7 @@ export class Store<T = any> {
 
   private reducerForDecorators(config: StoreConfig): (state, action) => (Record<string, any>) {
     return (state, action) => {
+      // TODO: replace with optional chaining
       const reducer = this.reducerMap && this.reducerMap[action.type] && this.reducerMap[action.type].func;
       let next = state;
 

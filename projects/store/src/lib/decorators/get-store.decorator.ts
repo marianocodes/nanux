@@ -1,8 +1,6 @@
 import { ɵɵdirectiveInject } from '@angular/core';
-import { Store } from './store.service';
-import { select } from './utils/selector.util';
-
-// TODO: change helper functions to be more functional insteaf of modifing properties by reference
+import { Store } from '../store.service';
+import { select } from '../utils/selector.util';
 
 /**
  * This function create and inject the selectors corresponding to the state.
@@ -28,7 +26,7 @@ const generateSelectors = (store, stateSelected, cmp) => {
 
 const initDecoratorState = (store: Store, stateSelected: string, initialState) => {
   store.initialState = { ...store.initialState, [stateSelected]: initialState };
-  store.init(); // subscrube to dispatch and init redux store
+  store.init(); // subscribe, init and dispatch redux store
 };
 
 const initDecoratorReducer = (store: Store, stateSelected: string, cmp) => {
@@ -39,12 +37,20 @@ const initDecoratorReducer = (store: Store, stateSelected: string, cmp) => {
   }
 };
 
+// It's expose only for testing purpose
+export const ngAPI: any = { getInjectable: (ref) => ɵɵdirectiveInject(ref) };
+
+/**
+ * Store decorator injects the Redux store and generate selectors
+ * @param stateSelected Keyname for state
+ * @param initialStateDecorator Initial State value
+ */
 export function GetStore(stateSelected: string, initialStateDecorator?) {
   return (cmpType) => {
     const originalFactory = cmpType.ɵfac;
     cmpType.ɵprov.factory = (...args) => {
       const cmp = originalFactory(...args);
-      const store: Store = ɵɵdirectiveInject(Store);
+      const store: Store = ngAPI.getInjectable(Store);
 
       if (store.config.decorators) {
         initDecoratorState(store, stateSelected, initialStateDecorator);
